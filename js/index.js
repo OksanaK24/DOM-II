@@ -49,11 +49,11 @@ parEl[i].addEventListener("mouseout", MouseOt)
 
 // 5. keydown; 6. keyup;
 document.addEventListener("keydown", (e) => {
-    console.log(`${e.code} was pressed`)
+    alert(`${e.code} was pressed`)
 })
 
 document.addEventListener("keyup", (e) =>{
-    console.log(`${e.code} was released`)
+    alert(`${e.code} was released`)
 })
 
 // 7. resize;
