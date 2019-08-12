@@ -11,9 +11,9 @@ function focusEl(event) {
 
 function blurEl (event) { 
     event.preventDefault();
-    event.target.style.backgroundColor = "initial"; 
-    event.target.style.color = "initial";
-    event.target.style.fontSize = "initial";
+    event.target.style.backgroundColor = ""; 
+    event.target.style.color = "";
+    event.target.style.fontSize = "";
 }
 
 function DoubleCl (event){
@@ -25,10 +25,8 @@ for (let u = 0; u<navEl.length; u++){
     navEl[u].addEventListener ("focus", focusEl);
     navEl[u].addEventListener("blur", blurEl);
     navEl[u].addEventListener("dblclick", DoubleCl);
+    navEl[u].addEventListener("mouseout", MouseOt)
 }
-
-
-
 
 // 3. mouseover;  4. mouseout;
 function MouseOv(event){
@@ -37,9 +35,10 @@ function MouseOv(event){
     event.target.style.color = "DarkRed";
 }
 function MouseOt(event){
-    event.stopPropagation();
-    event.target.style.backgroundColor = "initial";
-    event.target.style.color = "initial";
+    // event.stopPropagation();
+    event.currentTarget.style.backgroundColor = "";
+    event.currentTarget.style.color = "";
+    event.currentTarget.style.border = "";
 }
 
 let parEl = document.querySelectorAll("p");
@@ -68,8 +67,7 @@ function resizeFun() {
 // 8. mousemove;
 let destEl = document.querySelectorAll(".content-pick .destination");
 function MouseMov(event){
-
-    event.target.style.backgroundColor = "LightGreen";
+   event.currentTarget.style.backgroundColor = "LightGreen";
 }
 
 for (let r=0; r<destEl.length; r++){
@@ -87,5 +85,6 @@ function BtnCl(event){
 
 for (let w=0; w<ButtonEl.length; w++){
     ButtonEl[w].addEventListener("click", BtnCl)
+    ButtonEl[w].addEventListener("mouseout", MouseOt)
 }
 
